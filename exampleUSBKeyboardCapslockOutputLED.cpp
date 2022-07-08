@@ -20,7 +20,11 @@
 # answer by: BiagioF, 20160811; edited by CommunityBot, 20200620
 #
 # Additional Notes:
-# 1) execute: sudo ./exampleUSBKeyboardCapslockOutputLED
+# 1) compile: 
+#    g++ -c exampleUSBKeyboardCapslockOutputLED.cpp 
+#	 g++ -o exampleUSBKeyboardCapslockOutputLED exampleUSBKeyboardCapslockOutputLED.o 
+#
+# 2) execute: sudo ./exampleUSBKeyboardCapslockOutputLED
 # --> output: Capslock (and Numlock) Light Emitting Diodes (LED) shall BLINK;
 --> reminder: LIGHT = 1;  NO LIGHT = 0;
 #
@@ -51,7 +55,7 @@ int main(int argc, char* argv[]) {
   ioctl(fd_console, 0x4B32, 0x04);
 
   // turn on num block 
-  ioctl(fd_console, 0x4B32, 0x02);
+  //ioctl(fd_console, 0x4B32, 0x02);
   
   // turn off 
   ioctl(fd_console, 0x4B32, 0x0);
